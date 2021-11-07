@@ -1,6 +1,5 @@
 
-  # Hello world
-# p "First"
+# p "Hello World"
 # hello = "Hello World"
 
 # adjective = "Big Bad"
@@ -13,10 +12,8 @@
 # # 1
 # p nums.uniq
 # # 2
-# nums.push 18
-# p nums.uniq
-# nums.pop 18
-# p nums.uniq
+# p nums.push(18)
+# p nums.pop
 # nums.shift 18
 # p nums.uniq
 # nums.unshift 18
@@ -42,8 +39,8 @@
 # p nums.first 3
 # # 12
 # p nums.last 5
-# 13 not sure about this one
-# p nums group_by {|nums| nums % 3}
+# 13 
+# p nums.group_by {|nums| nums % 3 == 0}
 # # 14
 # p nums.minmax
 # # 15
@@ -102,7 +99,47 @@
 # def print_price hash
 #     p hash[:price]
 # end
-
 # print_price table
+
+# def print_sum hash1,hash2
+#   sum = hash1[:price] + hash2[:price]
+#   p sum
+# end
+# print_sum table,lamp
+
+# Euler Problem
+
+# def sums
 # nums = 1..100
-#  p nums.find {|nums| nums % 3 === 0}
+#  array = nums.find_all {|nums| nums % 3 === 0}
+# p array.sum
+# end
+# sums
+
+# Primes 
+require 'prime'
+def check_prime hash
+p hash.prime?
+end
+
+check_prime 2
+check_prime 4
+
+# def get_primes max
+#  num = 1...max
+#  p num.prime
+# end
+# get_primes 100
+
+def primes(max)
+  primes = []
+
+  (2...max).each do |num|
+    primes << num if check_prime(num)
+    p num
+  end
+
+  primes
+end
+
+primes 100
